@@ -1,4 +1,4 @@
-![Azurelogo](https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/83043478-a3f3-4926-bd51-eb528b7f5339)
+![image](https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/ce178d18-ac63-46ab-a1a5-963e8c2fec0a)![Azurelogo]
 
 
 ### Learning Objectives:
@@ -30,7 +30,7 @@
 ## Step 1: Create FREE Azure account: [Azure](https://azure.microsoft.com/en-us/free/ "Azure")
 - Click on “Go to the Azure Portal” or go to `portal.azure.com` once you create your account.
 
-![](images/S1.png)
+<img width="1553" alt="S1" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/b48bf6f2-6813-4fbc-bb16-83956e91aa92">
 
 ## Step 2: Create our honey pot virtual machine
 - In the search bar of the “Quickstart Center” page > search and click virtual machine 
@@ -130,7 +130,8 @@
 - Search and click *Event Viewer*
 - Click Windows Logs > Security and find the Audit Failure log (our failed login attempt; if you don’t see it at first filter current log by “Audit Failure” found to the left)
 
-![](images/S10A.png)
+
+<img width="676" alt="S10A" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/eb660481-6872-460c-a515-972d33753771">
 
 > The Source Network Address will represent the attacker’s IPs and eventually where on Earth they are attacking us!
 > But in order to do this we need to send this network address to a third party API… but more on that later.
@@ -144,7 +145,8 @@
 - Under Public Profile > Firewall state: OFF
 - Try to ping vm again from your **host** machine - this should now work!
 
-![](images/S10B.png)
+<img width="933" alt="S10B" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/963b94b3-cb5e-4a8e-a2e2-3345ba39cdb6">
+
 
 ## Step 11A: Retrieve Powershell script: [Script](https://github.com/joshmadakor1/Sentinel-Lab/blob/main/Custom_Security_Log_Exporter.ps1 "Script")
 - Open Powershell ISE
@@ -154,7 +156,7 @@
 - Copy and paste *your* API key in your Powershell script `$API_KEY = “_your API key_”`
 - Save file.
 
-![](images/S11A.png)
+<img width="904" alt="S11A" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/fe296926-b579-4976-b336-a5e0fe3b1011">
 
 > Quick explanation of script: the script will parse through the security event logs (Audit Failure/failed login logs we looked at earlier) and grab IP information. The script then **passes** the IP thorough the API and correlates the info into longitude and latitude, giving us specific geographical information. 
 
@@ -163,14 +165,14 @@
 - You should receive purple logs indicating latitude / latitude of failed logins (some sample logs and some log when we failed to log in)
 > NOTE: Keep Powershell script running in the backgroup. We need to continously feed our log repository information.
 
-![](images/S11B.png)
+<img width="872" alt="S11B" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/5c9337b8-912a-4308-a5e9-27b22708e08c">
 
 ## Step 12A: Create custom geolocation log in Log Analytics Workspace.
 - This log will use IP information to give us specific geolocation to our create map down the line.
 - Search and click Log Analytics Workspace > law-honeypot1 > custom logs > + Add custom log
 - We need to upload a sample log to “train” log analytics on what to look for.
 
-![](images/S12A.png)
+<img width="1328" alt="S12A" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/e499d0b9-9b22-4e54-99c5-80f4d73cf98e">
 
 ## Step 12B: Custom geolocation log (cont.)
 - Our sample logs are in our **honeypot-vm**.
@@ -179,11 +181,12 @@
 - Back on our **host machine**, open notes and paste our sample logs.
 - Save the file in a log or txt format and upload it in the *Create a custom log* page. Click next and you should see the sample logs.
 
-![](images/S12B.png)
+<img width="1097" alt="S12B" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/489b513e-f0a0-474f-927f-d8b740e52499">
+
 
 ## Step 12C: Click next and under Collection Paths > under Type > Windows, under Path write C:\ProgramData\failed_rdp.log
 
-![](images/S12C.png)
+<img width="1208" alt="S12C" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/50e70025-d908-4872-a9f9-25c41dcb49dc">
 
 ## Step 12D: Click next > under Details > Custom log name write FAILED_RDP_WITH_GEO (CL will be added to the end)
 - Click next > Create >Review + Create
