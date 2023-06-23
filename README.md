@@ -1,4 +1,4 @@
-![](images/Azurelogo.jpeg)
+![Azurelogo](https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/83043478-a3f3-4926-bd51-eb528b7f5339)
 
 
 ### Learning Objectives:
