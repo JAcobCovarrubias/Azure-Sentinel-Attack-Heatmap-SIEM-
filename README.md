@@ -1,5 +1,4 @@
-![image](https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/ce178d18-ac63-46ab-a1a5-963e8c2fec0a)![Azurelogo]
-
+![Azurelogo](https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/404450c6-d9e1-4389-8784-6c2d1a899fc4)
 
 ### Learning Objectives:
 1. Provisioning and deprovisioning virtual environments within Azure.
@@ -192,14 +191,15 @@
 - Click next > Create >Review + Create
 - Let’s go back to log analytics and check if Azure is connected and listening to our vm.
 
-![](images/S12E.png)
+
+<img width="1217" alt="S12E" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/c195d017-8e46-4dae-b63f-a32955ff87cd">
 
 ## Step 12E: Secure connection between honeypot-vm and log analytics 
 - Under law-honeypot1 > General > Logs > search SecurityEvent and click blue Run button.
 - Give it a moment, and voila! It returns the same security logs window from our honeypot-vm’s Event Viewer.
 - Give it some time and search our custom: `FAILED_RDP_WITH_GEO_CL will` it will return our sample logs.
 
-![](images/S12F.png)
+<img width="2535" alt="S12F" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/6bf6fc19-8458-4f70-973c-915b7655d844">
  
 ## Step 13A: Overview: Extract geo-data from the RawData of our sample logs.
 - Take a look at our sample logs in our FAILED_RDP_WITH_GEO_CL.
@@ -208,7 +208,8 @@
 - It sounds a bit abstract now, but bare with me.
 > NOTE: If you step away and come back to this lab after a day or two make sure to change the *Time range* accordingly. 
 
-![](images/S13A.png)
+<img width="2073" alt="S13A" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/bc5c5e93-6c57-49f6-8f39-564153fa9bbb">
+
 
 ## Step 13B: Extract and categorize data from sample log
 - Right-click the first log you see in the search results and click Extract Fields from FAILED_RDP_WITH_GEO_CL
@@ -218,7 +219,8 @@
 - To the right, check that the SIEM is selecting the correct values on each sample log.
 - Click save extraction. 
 
-![](images/S13B.png)
+
+<img width="2540" alt="S13B" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/7d7e69a3-6f7e-4b16-936b-7059e9e2a1ab">
 
 > This is an important step because we are ‘training’ our SIEM what to look out for. 
 
@@ -235,7 +237,7 @@
 - Take a look at the search result, it should now highlight the correct longitude value.
 - Continue to train our SIEM and correct a few more search results.
 
-![](images/S13C.png)
+<img width="2534" alt="S13C" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/984b1272-b651-41a2-a4c0-b0ca47fa5c7b">
 
 ## Step 13D: Even more data extraction from sample log!
 - The same process to when we extracted latitude and longitude values.
@@ -254,7 +256,8 @@
 - Under setting columns to the left click Custom Logs > Custom fields
 - Your custom fields we just made should look something like this:
 
-![](images/S13D.png)
+
+<img width="2519" alt="S13D" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/c0d022ad-092c-4c11-a163-59e0b3975250">
 
 > A couple of notes before moving on: **make sure our Powershell script log_exporter.log is running**. The script will continue to feed our SIEM with fresh new logs. 
 
@@ -270,7 +273,8 @@
 | where destinationhost_CF != "samplehost"
 | where sourcehost_CF != ""`
 
-![](images/S14A.png)
+<img width="2498" alt="S14A" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/c0d65e63-8c2a-4a61-9c21-a819bf34df6c">
+
 
 > This will parse through the failed RDP’s logs and return to us location information through our custom fields we created.
 
@@ -293,7 +297,7 @@
 - Pretty rad - **if you take a look at the actual logs you can see source IP, time, country, user name and other details!**
 - Remember too, these logs are only reporting back failed RDP attempts… who knows what other attacks are being attempted.  
 
-![](images/S14B.png)
+<img width="2109" alt="S14B" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/ab443bbd-76aa-4ed6-ad03-ff3113f7cbb6">
 
 ## Step 14C: Finish/save threat visualization 
 - Hit > save and close
@@ -303,7 +307,9 @@
 - You can hit the refresh icon near the top of the map (**make sure Powershell script is running**) to load more logs into the map
 - Also, you can click Auto refresh ON to refresh every so often.
 
-![](images/S14C.png)
+
+<img width="1908" alt="S14C" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/facb4e69-e06c-49a1-bb55-db09a9ee27fa">
+
 
 ## FINAL STEP: Deprovision resources 
 - Once you are done with the lab delete the resources, otherwise they will eat away from your free credit (deprovisioning is also a good thing to keep in mind at the enterprise level)
