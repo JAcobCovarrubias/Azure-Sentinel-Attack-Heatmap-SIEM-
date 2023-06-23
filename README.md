@@ -62,14 +62,16 @@
 - Leave the rest of the settings as default
 - Click Add > OK > Review + create - wait a bit to load and click Create
 
-![](images/S4.png)
+<img width="2521" alt="S4" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/b3d27c36-4c1d-4380-9995-7a928169a9db">
 
 > The point of this new firewall rule is to allow any traffic from anywhere.  This will make our virtual machine very discoverable. 
 
 ## Step 5: Create Log Analytics workspace
 - As we wait for our vm to deploy, go back to the search bar and search and click *Log Analytics workspaces*
 
-![](images/S5%20.png)
+
+
+<img width="1282" alt="S5 " src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/081c5164-8664-47a9-bb1c-a6c4be7b29d6">
 
 > The purpose  of this workspace is to ingest logs from our vm. Additionally, we will create our own custom logs that will contain geographic information on who is attacking us. Later, our MS SIEM will feed logs into here.
 
@@ -84,12 +86,13 @@
 - Back in the search bar search and click *Microsoft Defender for Cloud*
 - Once on the dashboard click > Environment Settings > (through the drop down menus) > law-honeypot1
 
-![](images/S6A.png)
+<img width="1887" alt="S6A" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/71b2a52e-4092-4292-bebb-7052614f4968">
 
 ## Step 6B: Under law-honeypot1 select *Defender Plans* and enable *Servers* ON and *SQL servers on machines* OFF. With *Cloud Security Posture Management* ON. Hit save.
 - Under *Data Collection* tab select *All Events*. Hit save.
 
-![](images/S6B.png)
+
+<img width="2538" alt="S6B" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/5e41b415-7b6b-4865-945d-bb505ae9c678">
 
 ## Step 7: connect Log Analytics workspace to our vm
 - On the search bar select Log Analytics workspace
@@ -97,19 +100,21 @@
 - Click **connect**, after clicking honeypot-vm
 - It will take some time to successfully connect; you should get a message confirming connection.
 
-![](images/S7.png)
+<img width="2538" alt="S7" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/10d115df-f816-431e-9df1-7f85d9994dd7">
 
 ## Step 8: Add Microsoft Sentinel to our workspace 
 - In search bar find **Microsoft Sentinel**
 - Click Create Microsoft Sentinel > select law-honeypot1 > Add
 - This will also take some time
 
-![](images/S8.png)
+
+<img width="2514" alt="S8" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/3c50d663-70da-45eb-89fa-e1e8661ef293">
+
 
 ## Step 9A: Log into vm through host machine
 - Through the search bar, find our honeypot-vm > copy the Public IP address (highlighted here on the right)
 
-![](images/S9A.png)
+<img width="2526" alt="S9A" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/4e3d96f3-48e0-4f76-b9d8-ae3063b0bfb3">
 
 ## Step 9B: RDP from host Windows machine
 - On your Windows machine (Windows vm will also work) search and open *Remote Desktop Connection*
@@ -122,7 +127,9 @@
 - Accept the certificate warning
 - You should be logged into the vm when you see “Remote Desktop Connection” at the top of the screen.
 
-![](images/S9B.png)
+
+
+<img width="905" alt="S9B" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/b7fcc123-7cf3-4ae7-9ac0-adf2127ab1a1">
 
 ## Step 10A: Set up vm and explore 
 - Click NO to all privacy settings and Accept
