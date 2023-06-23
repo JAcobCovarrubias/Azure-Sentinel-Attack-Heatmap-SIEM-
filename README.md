@@ -8,7 +8,6 @@
 
 
 
-
 ### Technologies and Protocols:
 * Microsft Azure - a cloud computing service operated by Microsoft for application management via Microsoft-managed data centers
 * Services within Azure: Log Analytics Workspace and Sentinel (Mircosoft's SIEM)
@@ -16,7 +15,9 @@
 * Remote desktop protocol
  
 ### Overview:
-![](images/azure.png)
+
+
+<img width="867" alt="azure" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/ecee48e2-0c8d-4844-ad38-7c32ec15276e">
 
 > Step-by-step overview of lab:
 1. Create Azure subscription (FREE $200 credits)
