@@ -35,7 +35,8 @@
 - In the search bar of the “Quickstart Center” page > search and click virtual machine 
 - This will be the honey pot virtual machine made to entice attackers from all over the world
 
-![](images/S2.png)
+<img width="2208" alt="S2" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/c6ae61dd-f9d3-4825-ab4c-3600d1812dfe">
+
 
 ## Step 3: On the “virtual machines” page click Create > Azure virtual machine 
 - Edit the virtual machine as follows:
@@ -48,7 +49,7 @@
 - Create a username and password - **don’t forget credentials**
 - Finally, check confirm box - leaving the rest in their default options  
 
-![](images/S3.png)
+<img width="1216" alt="S3" src="https://github.com/JAcobCovarrubias/Azure-Sentinel-Heatmap-SEIM-/assets/137449348/667346fc-bb95-4d37-877b-f028dfe61087">
 
 ## Step 4: Click > Next: Disk but leave it as is, click to continue to Networking
 -  Under *NIC network security group* select > Advance and under *Configure network security group* select Create new
